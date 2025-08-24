@@ -13,6 +13,11 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", href: "#home" },
+    { label: ">>Readme.md", href: "#about" },
+    { label: "./what_we_do.sh", href: "#what-we-do" },
+    { label: "before_after.js", href: "#before-after" },
+    { label: "CONTRIBUTING.md", href: "#roadmap" },
+    { label: "why_join_us.md", href: "#why-join" },
   ];
 
   useEffect(() => {

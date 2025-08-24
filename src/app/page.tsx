@@ -3,6 +3,12 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Hero from "@/components/sections/hero";
+import About from "@/components/sections/about";
+import WhatWeDo from "@/components/sections/what-we-do";
+import Roadmap from "@/components/sections/roadmap";
+import WhyJoin from "@/components/sections/why-join";
+import Join from "@/components/sections/join";
+import BeforeAfter from "@/components/sections/before-after";
 
 const GridBackground = () => (
     <div className="fixed top-0 left-0 w-full h-full -z-10">
@@ -26,6 +32,12 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <About />
+        <WhatWeDo />
+        <BeforeAfter />
+        <Roadmap />
+        <WhyJoin />
+        <Join />
       </main>
       <Footer />
     </div>
