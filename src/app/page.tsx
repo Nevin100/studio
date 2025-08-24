@@ -11,11 +11,24 @@ import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import BeforeAfter from "@/components/sections/before-after";
 import Roadmap from "@/components/sections/roadmap";
-import Achievements from "@/components/sections/achievements";
-import Departments from "@/components/sections/departments";
-import Projects from "@/components/sections/projects";
+import WhatWeDo from "@/components/sections/what-we-do";
 import WhyJoin from "@/components/sections/why-join";
 import Join from "@/components/sections/join";
+
+const GridBackground = () => (
+    <div className="fixed top-0 left-0 w-full h-full -z-10">
+      <div
+        className="absolute inset-0 bg-background"
+        style={{
+          backgroundImage:
+            'linear-gradient(hsl(var(--primary) / 0.03), transparent 2px), linear-gradient(90deg, hsl(var(--primary) / 0.03), transparent 2px)',
+          backgroundSize: '32px 32px',
+          backgroundPosition: '0 0, 0 0',
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+    </div>
+  );
 
 export default function Home() {
   useEffect(() => {
@@ -26,7 +39,7 @@ export default function Home() {
       gsap.from(section, {
         opacity: 0,
         y: 50,
-        duration: 0.5,
+        duration: 0.8,
         ease: "power3.out",
         scrollTrigger: {
           trigger: section,
@@ -40,15 +53,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <GridBackground />
       <Navbar />
       <main className="flex-grow">
         <Hero />
         <About />
+        <WhatWeDo />
         <BeforeAfter />
         <Roadmap />
-        <Achievements />
-        <Departments />
-        <Projects />
         <WhyJoin />
         <Join />
       </main>

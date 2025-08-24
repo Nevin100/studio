@@ -44,14 +44,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      style={{ 
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%236EE7FF' stroke-width='0.5'%3E%3Cpath d='M-500 75c0 0 125-37.5 250 0S0 225 0 225s125 75 250 0s250-150 250-150s125-37.5 250 0s250 150 250 150s125 75 250 0'/%3E%3Cpath d='M-500 225c0 0 125-37.5 250 0S0 375 0 375s125 75 250 0s250-150 250-150s125-37.5 250 0s250 150 250 150s125 75 250 0'/%3E%3Cpath d='M-500 375c0 0 125-37.5 250 0S0 525 0 525s125 75 250 0s250-150 250-150s125-37.5 250 0s250 150 250 150s125 75 250 0'/%3E%3Cpath d='M-500 525c0 0 125-37.5 250 0S0 675 0 675s125 75 250 0s250-150 250-150s125-37.5 250 0s250 150 250 150s125 75 250 0'/%3E%3Cpath d='M-500 675c0 0 125-37.5 250 0S0 825 0 825s125 75 250 0s250-150 250-150s125-37.5 250 0s250 150 250 150s125 75 250 0'/%3E%3C/g%3E%3C/svg%3E\")",
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
-      }}
     >
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
         <div className="relative z-10">
       <motion.h1
         className="text-4xl md:text-6xl font-bold mb-4"
@@ -63,11 +56,21 @@ const Hero = () => {
         <br />
         <span className="text-primary">Building the Web, Building the Future</span>
       </motion.h1>
-      <p className="text-lg md:text-xl text-muted-foreground mb-8">
-        Terminal • VS Code • Dark Mode • Geeky Vibes
-      </p>
+      <motion.p 
+        className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl"
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 120, delay: 0.3 }}
+      >
+        We are the architects of the digital frontier, a community of developers, designers, and innovators at GeekRoom dedicated to building the web's future, one line of code at a time.
+      </motion.p>
 
-      <div className="font-code text-left max-w-xl mx-auto bg-card/50 p-6 rounded-lg border border-border/50 shadow-lg backdrop-blur-md">
+      <motion.div 
+        className="font-code text-left max-w-xl mx-auto bg-card/50 p-6 rounded-lg border border-border/50 shadow-lg backdrop-blur-md"
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 120, delay: 0.4 }}
+      >
         {terminalLines.map((line, index) => (
           <p key={index} className="terminal-line text-muted-foreground">
             <span className={line.startsWith("$") ? "text-green-400" : "text-accent"}>{line.split(" ")[0]}</span>
@@ -76,7 +79,7 @@ const Hero = () => {
           </p>
         ))}
         <div className="h-6"><span className="cursor text-primary text-2xl">▋</span></div>
-      </div>
+      </motion.div>
       
       <motion.div
         initial={{ y: 30, opacity: 0 }}

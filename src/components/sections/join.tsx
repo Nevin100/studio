@@ -22,6 +22,7 @@ const Join = () => {
 
           <CardContent className="relative p-8 md:p-12">
             <h2 className="font-code text-3xl font-bold text-primary mb-4">join.sh</h2>
+            <p className="text-muted-foreground mb-8">Ready to build, learn, and ship? Apply now to join a team of passionate developers and make your mark on the web.</p>
             <pre className="font-code bg-black/30 p-4 rounded-md text-left my-8 text-sm md:text-base whitespace-pre-wrap">
               <code>{codeText}</code>
             </pre>
@@ -33,7 +34,7 @@ const Join = () => {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
                 <Button size="lg" variant="ghost" asChild>
-                  <a href="#projects">View Projects</a>
+                  <a href="#what-we-do">What We Do</a>
                 </Button>
               </motion.div>
             </div>
