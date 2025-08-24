@@ -73,7 +73,7 @@ const Hero = ({ isBad = false }: { isBad?: boolean }) => {
         <span className="text-primary">Building the Web, Building the Future</span>
       </motion.h1>
       <motion.p 
-        className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl"
+        className="text-lg md:text-xl text-foreground mb-8 max-w-3xl"
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120, delay: 0.3 }}

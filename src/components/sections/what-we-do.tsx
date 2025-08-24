@@ -103,7 +103,7 @@ const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
                   {achievements.map((item, index) => (
                     <li key={index} className="log-item flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-green-400 mt-1 shrink-0" />
-                      <span className="text-lg text-foreground/90">{item}</span>
+                      <span className="text-lg text-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -124,9 +124,9 @@ const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
                     const parts = line.split(" → ");
                     return (
                       <p key={index} className="echo-line">
-                        <span className="text-secondary/90">{parts[0]}</span>
+                        <span className="text-secondary">{parts[0]}</span>
                         <span className="text-muted-foreground"> → </span>
-                        <span className="text-foreground/90">{parts[1]}</span>
+                        <span className="text-foreground">{parts[1]}</span>
                       </p>
                     );
                   })}

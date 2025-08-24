@@ -45,7 +45,7 @@ const Roadmap = ({ isBad = false }: { isBad?: boolean }) => {
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           CONTRIBUTING.md
         </h2>
-        <p className="text-muted-foreground">Feeling a little lost? Here's the way forward.</p>
+        <p className="text-foreground">Feeling a little lost? Here's the way forward.</p>
       </div>
 
       <div className="max-w-3xl mx-auto space-y-8">
@@ -63,7 +63,7 @@ const Roadmap = ({ isBad = false }: { isBad?: boolean }) => {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground whitespace-pre-line text-lg">
+              <p className="text-foreground whitespace-pre-line text-lg">
                 {confusionText.trim()}
               </p>
             </CardContent>

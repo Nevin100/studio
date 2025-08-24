@@ -51,7 +51,7 @@ const About = ({ isBad = false }: { isBad?: boolean }) => {
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           >>Readme.md
         </h2>
-        <p className="text-muted-foreground">We're more than just a club. We're a crew.</p>
+        <p className="text-foreground">We're more than just a club. We're a crew.</p>
       </div>
 
       <motion.div 
@@ -71,7 +71,7 @@ const About = ({ isBad = false }: { isBad?: boolean }) => {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{card.body}</p>
+                <p className="text-foreground">{card.body}</p>
               </CardContent>
             </Card>
           </motion.div>
