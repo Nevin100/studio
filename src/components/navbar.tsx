@@ -17,10 +17,9 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Before/After", href: "#before-after" },
-    { label: "Achievements", href: "#achievements" },
-    { label: "Departments", href: "#departments" },
+    { label: "Roadmap", href: "#roadmap" },
     { label: "Projects", href: "#projects" },
+    { label: "Join", href: "#join" },
   ];
 
   useEffect(() => {

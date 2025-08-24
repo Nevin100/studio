@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import BeforeAfter from "@/components/sections/before-after";
+import Roadmap from "@/components/sections/roadmap";
 import Achievements from "@/components/sections/achievements";
 import Departments from "@/components/sections/departments";
 import Projects from "@/components/sections/projects";
@@ -44,6 +45,7 @@ export default function Home() {
         <Hero />
         <About />
         <BeforeAfter />
+        <Roadmap />
         <Achievements />
         <Departments />
         <Projects />
