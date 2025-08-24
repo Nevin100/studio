@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { XCircle, CheckCircle } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card } from "../ui/card";
+import Image from "next/image";
 
 const BeforeAfter = () => {
   const beforeItems = [
@@ -54,11 +55,22 @@ const BeforeAfter = () => {
 
   return (
     <section id="before-after" className="container mx-auto px-4" ref={componentRef}>
-      <div className="text-center mb-12">
+      <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           before_after.js
         </h2>
         <p className="text-muted-foreground font-code">return &#123; life: '200 OK' &#125;</p>
+      </div>
+
+      <div className="flex justify-center mb-12">
+        <Image
+          src="/meme2.jpg"
+          alt="Developer meme"
+          width={800}
+          height={450}
+          className="rounded-lg shadow-lg"
+          data-ai-hint="developer meme"
+        />
       </div>
 
       <Card className="bg-card/50 overflow-hidden">
