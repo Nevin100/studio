@@ -3,15 +3,14 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion } from "framer-motion";
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
+import WhatWeDo from "@/components/sections/what-we-do";
 import BeforeAfter from "@/components/sections/before-after";
 import Roadmap from "@/components/sections/roadmap";
-import WhatWeDo from "@/components/sections/what-we-do";
 import WhyJoin from "@/components/sections/why-join";
 import Join from "@/components/sections/join";
 
