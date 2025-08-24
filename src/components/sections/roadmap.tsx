@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, GitMerge } from "lucide-react";
 
 const Roadmap = () => {
   const confusionText = `
@@ -12,16 +12,24 @@ const Roadmap = () => {
     I want to learn, I want to create, but I’m confused about which direction to take first.
   `;
 
+  const solutionText = `
+• **Foundation First:** We start with Git, HTML, CSS & JS. No shortcuts.
+• **Frameworks:** Dive into React & Next.js with guided mini-projects.
+• **Backend & DBs:** Learn how to build full-stack apps with Node.js, Express, and databases.
+• **Mentorship:** Get paired with senior members for code reviews and guidance.
+• **Real-World Experience:** Contribute to live campus projects to build your portfolio.
+  `;
+
   return (
     <section id="roadmap" className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           CONTRIBUTING.md
         </h2>
-        <p className="text-muted-foreground">Feeling a little lost? You're not alone.</p>
+        <p className="text-muted-foreground">Feeling a little lost? Here's the way forward.</p>
       </div>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto space-y-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,6 +47,38 @@ const Roadmap = () => {
               <p className="text-muted-foreground whitespace-pre-line text-lg">
                 {confusionText.trim()}
               </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/20">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <GitMerge className="w-8 h-8 text-accent" />
+                <CardTitle className="text-xl font-bold font-code text-accent">solution.md</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3 text-lg text-foreground">
+                {solutionText.trim().split('\n').map((line, i) => (
+                  <p key={i} className="flex items-start gap-3">
+                    <span className="text-accent mt-1.5">•</span>
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: line
+                          .substring(2)
+                          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary font-semibold">$1</strong>'),
+                      }}
+                    />
+                  </p>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </motion.div>
