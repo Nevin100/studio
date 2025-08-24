@@ -26,8 +26,6 @@ const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
   const componentRef = useRef(null);
 
   useEffect(() => {
-    if (isBad) return;
-
     gsap.registerPlugin(ScrollTrigger);
     const element = componentRef.current;
     if (!element) return;
@@ -54,7 +52,7 @@ const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
       ease: "power2.out",
     }, "-=0.3");
 
-  }, [isBad]);
+  }, []);
   
   if (isBad) {
     return (
@@ -83,7 +81,7 @@ const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           ./what_we_do.sh
         </h2>
-        <p className="text-muted-foreground">From hackathon sites to department portals, we build it all.</p>
+        <p className="text-foreground">From hackathon sites to department portals, we build it all.</p>
       </div>
 
       <div className="max-w-6xl mx-auto">

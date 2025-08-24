@@ -25,8 +25,6 @@ const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
   const componentRef = useRef(null);
 
   useEffect(() => {
-    if (isBad) return;
-
     gsap.registerPlugin(ScrollTrigger);
     const element = componentRef.current;
     if (!element) return;
@@ -53,7 +51,7 @@ const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
       ease: "power2.out"
     }, "-=0.3");
 
-  }, [isBad]);
+  }, []);
 
   if (isBad) {
     return (
@@ -81,7 +79,7 @@ const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           before_after.js
         </h2>
-        <p className="text-muted-foreground font-code">return &#123; life: '200 OK' &#125;</p>
+        <p className="text-foreground font-code">return &#123; life: '200 OK' &#125;</p>
       </div>
 
       <Card className="bg-card/50 overflow-hidden">
