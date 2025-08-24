@@ -5,8 +5,8 @@ import { Github, Send } from "lucide-react";
 
 const DribbbleIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M9 20a1 1 0 0 1-1-1 8 8 0 0 1-7-8 1 1 0 0 1 1-1h2a1 1 0 0 1 1 1 5 5 0 0 0 9.6 2.4A1 1 0 0 1 15 8h2a1 1 0 0 1 1 1 8 8 0 0 1-8 11z"></path>
-        <path d="M8 12a1 1 0 0 1-1-1 4 4 0 0 1 7-2.9A1 1 0 0 1 15 8h2a1 1 0 0 1 1 1 8 8 0 0 1-8 11c-1.6 0-3-1-4-2"></path>
+        <path d="M9 20a1 1 0 0 1-1-1 8 8 0 0 1-7-8 1 1 0 0 1 1-1h2a1 1 0 0 1 1 1 5 5 0 0 0 9.6 2.4A1 1 0 0 1 15 8h2a1 1 0 0 1 1 1 8 8 0 0 1-8 11z" />
+        <path d="M8 12a1 1 0 0 1-1-1 4 4 0 0 1 7-2.9A1 1 0 0 1 15 8h2a1 1 0 0 1 1 1 8 8 0 0 1-8 11c-1.6 0-3-1-4-2" />
     </svg>
 );
 
