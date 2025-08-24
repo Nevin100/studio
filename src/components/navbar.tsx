@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Menu, X } from "lucide-react";
 import Logo from "./logo";
 import { Button } from "./ui/button";
@@ -12,14 +10,9 @@ import { cn } from "@/lib/utils";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navbarRef = useRef(null);
 
   const navItems = [
     { label: "Home", href: "#home" },
-    { label: "Readme.md", href: "#about" },
-    { label: "what_we_do.sh", href: "#what-we-do" },
-    { label: "CONTRIBUTING.md", href: "#roadmap" },
-    { label: "join.sh", href: "#join" },
   ];
 
   useEffect(() => {
@@ -46,7 +39,6 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        ref={navbarRef}
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120, damping: 16, delay: 0.2 }}

@@ -26,7 +26,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      {/* suppressHydrationWarning prevents client/server mismatches */}
+      {/* suppressHydrationWarning prevents client/server mismatches from browser extensions */}
       <body className="font-body antialiased" suppressHydrationWarning>
         {children}
         <Toaster />

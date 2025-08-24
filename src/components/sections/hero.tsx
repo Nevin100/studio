@@ -6,12 +6,6 @@ import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
-  const terminalLines = [
-    "$ echo \"Hello, World!\"",
-    "› Spinning up ideas → shipping products",
-    "› sudo join geekroom-webdev --yes",
-  ];
-
   const componentRef = useRef(null);
 
   useEffect(() => {
@@ -35,6 +29,12 @@ const Hero = () => {
     }, componentRef);
     return () => ctx.revert();
   }, []);
+
+  const terminalLines = [
+    "$ echo \"Hello, World!\"",
+    "› Spinning up ideas → shipping products",
+    "› sudo join geekroom-webdev --yes",
+  ];
 
   return (
     <motion.section
