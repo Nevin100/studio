@@ -28,20 +28,58 @@ const GridBackground = () => (
 );
 
 const BadDesign = ({ onGoodDesign }: { onGoodDesign: () => void }) => (
-  <div style={{ fontFamily: "monospace", padding: "2rem", color: "#ccc" }}>
-    <h1>GeekRoom WebDev Society</h1>
-    <p>We build stuff.</p>
-    <h2>Sections</h2>
-    <ul>
-      <li>About</li>
-      <li>What We Do</li>
-      <li>Roadmap</li>
-      <li>Why Join</li>
-      <li>Join</li>
-    </ul>
+  <div style={{ fontFamily: "Comic Sans MS, cursive", padding: "1rem", color: "#eee", background: "#222" }}>
+    <header style={{ border: "2px dashed red", padding: "10px", marginBottom: "20px" }}>
+      <h1 style={{ fontSize: "48px", color: "yellow", textAlign: "center" }}>GeekRoom WebDev</h1>
+      <nav style={{ textAlign: "center", marginTop: "10px" }}>
+        <a href="#home" style={{ margin: "0 15px", color: "cyan", fontSize: "12px" }}>Home</a>
+        <a href="#about" style={{ margin: "0 15px", color: "cyan", fontSize: "18px" }}>About</a>
+        <a href="#what-we-do" style={{ margin: "0 15px", color: "cyan", fontSize: "14px" }}>What We Do</a>
+        <a href="#before-after" style={{ margin: "0 15px", color: "cyan", fontSize: "20px" }}>Before/After</a>
+        <a href="#roadmap" style={{ margin: "0 15px", color: "cyan", fontSize: "12px" }}>Roadmap</a>
+        <a href="#why-join" style={{ margin: "0 15px", color: "cyan", fontSize: "16px" }}>Why Join</a>
+      </nav>
+    </header>
+    
+    <main style={{ padding: "0 25px" }}>
+      <div style={{ marginBottom: "50px", border: "1px solid green", padding: "15px" }}>
+        <Hero />
+      </div>
+      <div style={{ marginBottom: "40px", border: "1px solid green", padding: "25px" }}>
+        <About />
+      </div>
+      <div style={{ marginBottom: "60px", border: "1px solid green", padding: "5px" }}>
+        <WhatWeDo />
+      </div>
+      <div style={{ marginBottom: "30px", border: "1px solid green", padding: "35px" }}>
+        <BeforeAfter />
+      </div>
+      <div style={{ marginBottom: "55px", border: "1px solid green", padding: "12px" }}>
+        <Roadmap />
+      </div>
+      <div style={{ marginBottom: "45px", border: "1px solid green", padding: "28px" }}>
+        <WhyJoin />
+      </div>
+      <div style={{ marginBottom: "50px", border: "1px solid green", padding: "20px" }}>
+        <Join />
+      </div>
+    </main>
+
+    <footer style={{ borderTop: "5px solid blue", marginTop: "50px", paddingTop: "20px", textAlign: "center", fontSize: "10px" }}>
+      <p>© 2024 GeekRoom WebDev. All Rights Reserved. Probably.</p>
+    </footer>
+    
     <Button
       onClick={onGoodDesign}
       className="fixed bottom-4 right-4"
+      style={{ 
+        backgroundColor: 'lime', 
+        color: 'black', 
+        border: '2px solid black', 
+        borderRadius: '0',
+        fontFamily: '"Courier New", monospace',
+        fontSize: "18px"
+      }}
     >
       git add design
     </Button>
