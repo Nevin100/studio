@@ -92,7 +92,7 @@ const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
               {beforeItems.map((item, index) => (
                 <li key={index} className="before-item flex items-start gap-3">
                   <XCircle className="w-6 h-6 text-red-400 shrink-0 mt-0.5" />
-                  <span className="text-lg text-muted-foreground">{item}</span>
+                  <span className="text-lg text-foreground/90">{item}</span>
                 </li>
               ))}
             </ul>

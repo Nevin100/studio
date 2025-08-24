@@ -69,7 +69,7 @@ const WhyJoin = ({ isBad = false }: { isBad?: boolean }) => {
               why_join_us.md
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-lg text-muted-foreground">
+          <CardContent className="space-y-3 text-lg text-foreground/90">
             {parseMarkdown(markdown)}
           </CardContent>
         </Card>
