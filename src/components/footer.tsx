@@ -49,7 +49,7 @@ const Footer = () => {
                 hidden: { opacity: 0, y: 10 },
                 visible: { opacity: 1, y: 0 },
               }}
-              whileHover={{ scale: 1.1, color: "var(--primary)" }}
+              whileHover={{ scale: 1.1, color: "hsl(var(--primary))" }}
               transition={{ type: "spring", stiffness: 300 }}
               className="hover:text-primary transition-colors"
               aria-label={link.name}

@@ -23,8 +23,6 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
     const handleScroll = () => {
         setIsScrolled(window.scrollY > 20);
     };
@@ -40,7 +38,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinkProps = {
-    whileHover: { scale: 1.04, color: "var(--colors-primary)" },
+    whileHover: { scale: 1.04, color: "hsl(var(--primary))" },
     whileTap: { scale: 0.98 },
     transition: { type: "spring", stiffness: 300 },
   };
