@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HelpCircle, GitMerge } from "lucide-react";
 
-const Roadmap = () => {
+const Roadmap = ({ isBad = false }: { isBad?: boolean }) => {
   const confusionText = `
     I’ve just entered college… school life is behind me, and now I want to start building something real. 
     Everyone says ‘do development, make projects’ — but where do I even begin? 
@@ -19,6 +19,25 @@ const Roadmap = () => {
 • **Mentorship:** Get paired with senior members for code reviews and guidance.
 • **Real-World Experience:** Contribute to live campus projects to build your portfolio.
   `;
+  
+  if (isBad) {
+    return (
+      <div>
+        <h2 style={{ fontSize: "3rem", color: 'orange', textAlign: 'center' }}>CONTRIBUTING.md</h2>
+        <p style={{ textAlign: 'center' }}>Feeling a little lost? Here's the way forward.</p>
+        <div style={{ marginTop: '2rem' }}>
+          <div style={{ border: '2px dotted blue', padding: '1rem', marginBottom: '2rem' }}>
+            <h3 style={{ fontSize: '1.5rem', color: 'red' }}>confusion.md</h3>
+            <p style={{ whiteSpace: 'pre-line' }}>{confusionText.trim()}</p>
+          </div>
+          <div style={{ border: '2px solid yellow', padding: '1rem' }}>
+            <h3 style={{ fontSize: '1.5rem', color: 'green' }}>solution.md</h3>
+            <div style={{ whiteSpace: 'pre-line' }}>{solutionText.trim()}</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <section id="roadmap" className="container mx-auto px-4">

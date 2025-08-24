@@ -7,13 +7,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Terminal } from "lucide-react";
 
-const MarkdownPanel = () => {
+const WhyJoin = ({ isBad = false }: { isBad?: boolean }) => {
   const markdown =
     "• Build **real apps** used on campus\n• Be the **tech hero** every dept calls\n• Learn **future-proof** tools\n• Late-night builds + memes\n• **Showcase** portfolio & get noticed";
 
   const contentRef = useRef(null);
 
   useEffect(() => {
+    if (isBad) return;
+
     gsap.registerPlugin(ScrollTrigger);
     const contentElement = contentRef.current;
     if (!contentElement) return;
@@ -29,7 +31,7 @@ const MarkdownPanel = () => {
       stagger: 0.07,
       duration: 0.35,
     });
-  }, []);
+  }, [isBad]);
 
   const parseMarkdown = (text: string) => {
     return text.split('\n').map((line, i) => (
@@ -45,9 +47,20 @@ const MarkdownPanel = () => {
       </p>
     ));
   };
+  
+  if (isBad) {
+    return (
+      <div style={{ border: '4px ridge purple', padding: '1rem 3rem' }}>
+        <h2 style={{ fontSize: '2.5rem', color: 'pink' }}>why_join_us.md</h2>
+        <div style={{ marginTop: '1rem', whiteSpace: 'pre-line', fontSize: '18px', color: 'lightgreen' }}>
+          {markdown}
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <section id="why-join" className="container mx-auto px-4">
+    <section id="why-join" className="container mx-auto px-4" ref={contentRef}>
       <div className="max-w-2xl mx-auto">
         <Card className="bg-card/30 border-border/30 backdrop-blur-sm">
           <CardHeader>
@@ -56,7 +69,7 @@ const MarkdownPanel = () => {
               why_join_us.md
             </CardTitle>
           </CardHeader>
-          <CardContent ref={contentRef} className="space-y-3 text-lg text-muted-foreground">
+          <CardContent className="space-y-3 text-lg text-muted-foreground">
             {parseMarkdown(markdown)}
           </CardContent>
         </Card>
@@ -65,4 +78,4 @@ const MarkdownPanel = () => {
   );
 };
 
-export default MarkdownPanel;
+export default WhyJoin;

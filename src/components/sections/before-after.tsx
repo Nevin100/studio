@@ -8,7 +8,7 @@ import { XCircle, CheckCircle } from "lucide-react";
 import { Card } from "../ui/card";
 import Image from "next/image";
 
-const BeforeAfter = () => {
+const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
   const beforeItems = [
     "Copy–paste assignments",
     "Comic Sans PPTs 😬",
@@ -25,6 +25,8 @@ const BeforeAfter = () => {
   const componentRef = useRef(null);
 
   useEffect(() => {
+    if (isBad) return;
+
     gsap.registerPlugin(ScrollTrigger);
     const element = componentRef.current;
     if (!element) return;
@@ -51,7 +53,27 @@ const BeforeAfter = () => {
       ease: "power2.out"
     }, "-=0.3");
 
-  }, []);
+  }, [isBad]);
+
+  if (isBad) {
+    return (
+      <div>
+        <h2 style={{ fontSize: "2rem" }}>before_after.js</h2>
+        <p style={{ color: "#aaa" }}>return &#123; life: '200 OK' &#125;</p>
+        
+        <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+          <div style={{ padding: "10px", border: '2px solid red', flex: 1 }}>
+            <h3 style={{ fontSize: '24px', color: 'red' }}>Before</h3>
+            <ul>{beforeItems.map((item, i) => <li key={i}>{item}</li>)}</ul>
+          </div>
+          <div style={{ padding: "30px", border: '5px solid green', flex: 1 }}>
+            <h3 style={{ fontSize: '24px', color: 'green' }}>After</h3>
+            <ul>{afterItems.map((item, i) => <li key={i}>{item}</li>)}</ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section id="before-after" className="container mx-auto px-4" ref={componentRef}>
@@ -60,17 +82,6 @@ const BeforeAfter = () => {
           before_after.js
         </h2>
         <p className="text-muted-foreground font-code">return &#123; life: '200 OK' &#125;</p>
-      </div>
-
-      <div className="flex justify-center mb-12">
-        <Image
-          src="/meme2.jpg"
-          alt="Developer meme"
-          width={800}
-          height={450}
-          className="rounded-lg shadow-lg"
-          data-ai-hint="developer meme"
-        />
       </div>
 
       <Card className="bg-card/50 overflow-hidden">

@@ -4,8 +4,24 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "../ui/card";
 
-const Join = () => {
+const Join = ({ isBad = false }: { isBad?: boolean }) => {
   const codeText = "echo \"Don’t just browse — contribute to the codebase!\" \n\nsudo join geekroom-webdev 🚀";
+  
+  if (isBad) {
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <h2 style={{ fontSize: '50px' }}>join.sh</h2>
+        <p style={{ margin: '20px 0', fontSize: '11px' }}>Ready to build, learn, and ship? Apply now to join a team of passionate developers and make your mark on the web.</p>
+        <pre style={{ background: '#111', padding: '15px', margin: '30px 0', whiteSpace: 'pre-wrap' }}>
+          <code>{codeText}</code>
+        </pre>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+          <a href="#" style={{ background: 'orange', padding: '15px' }}>Apply Now</a>
+          <a href="#what-we-do" style={{ border: '1px solid white', padding: '5px' }}>What We Do</a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section id="join" className="container mx-auto px-4">

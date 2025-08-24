@@ -33,35 +33,35 @@ const BadDesign = ({ onGoodDesign }: { onGoodDesign: () => void }) => (
       <h1 style={{ fontSize: "48px", color: "yellow", textAlign: "center" }}>GeekRoom WebDev</h1>
       <nav style={{ textAlign: "center", marginTop: "10px" }}>
         <a href="#home" style={{ margin: "0 15px", color: "cyan", fontSize: "12px" }}>Home</a>
-        <a href="#about" style={{ margin: "0 15px", color: "cyan", fontSize: "18px" }}>About</a>
-        <a href="#what-we-do" style={{ margin: "0 15px", color: "cyan", fontSize: "14px" }}>What We Do</a>
-        <a href="#before-after" style={{ margin: "0 15px", color: "cyan", fontSize: "20px" }}>Before/After</a>
-        <a href="#roadmap" style={{ margin: "0 15px", color: "cyan", fontSize: "12px" }}>Roadmap</a>
-        <a href="#why-join" style={{ margin: "0 15px", color: "cyan", fontSize: "16px" }}>Why Join</a>
+        <a href="#about" style={{ margin: "0 15px", color: "cyan", fontSize: "18px" }}>>>Readme.md</a>
+        <a href="#what-we-do" style={{ margin: "0 15px", color: "cyan", fontSize: "14px" }}>./what_we_do.sh</a>
+        <a href="#before-after" style={{ margin: "0 15px", color: "cyan", fontSize: "20px" }}>before_after.js</a>
+        <a href="#roadmap" style={{ margin: "0 15px", color: "cyan", fontSize: "12px" }}>CONTRIBUTING.md</a>
+        <a href="#why-join" style={{ margin: "0 15px", color: "cyan", fontSize: "16px" }}>why_join_us.md</a>
       </nav>
     </header>
     
     <main style={{ padding: "0 25px" }}>
       <div style={{ marginBottom: "50px", border: "1px solid green", padding: "15px" }}>
-        <Hero />
+        <Hero isBad />
       </div>
-      <div style={{ marginBottom: "40px", border: "1px solid green", padding: "25px" }}>
-        <About />
+      <div style={{ marginBottom: "40px", border: "1px solid orange", padding: "25px" }}>
+        <About isBad />
       </div>
-      <div style={{ marginBottom: "60px", border: "1px solid green", padding: "5px" }}>
-        <WhatWeDo />
+      <div style={{ marginBottom: "60px", border: "1px solid fuchsia", padding: "5px" }}>
+        <WhatWeDo isBad />
       </div>
-      <div style={{ marginBottom: "30px", border: "1px solid green", padding: "35px" }}>
-        <BeforeAfter />
+      <div style={{ marginBottom: "30px", border: "1px solid blue", padding: "35px" }}>
+        <BeforeAfter isBad />
       </div>
-      <div style={{ marginBottom: "55px", border: "1px solid green", padding: "12px" }}>
-        <Roadmap />
+      <div style={{ marginBottom: "55px", border: "1px solid yellow", padding: "12px" }}>
+        <Roadmap isBad />
       </div>
-      <div style={{ marginBottom: "45px", border: "1px solid green", padding: "28px" }}>
-        <WhyJoin />
+      <div style={{ marginBottom: "45px", border: "1px solid cyan", padding: "28px" }}>
+        <WhyJoin isBad />
       </div>
-      <div style={{ marginBottom: "50px", border: "1px solid green", padding: "20px" }}>
-        <Join />
+      <div style={{ marginBottom: "50px", border: "1px solid lime", padding: "20px" }}>
+        <Join isBad />
       </div>
     </main>
 

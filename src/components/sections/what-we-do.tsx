@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CheckCircle2, Terminal } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-const WhatWeDo = () => {
+const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
   const achievements = [
     "Developed official Hackathon websites",
     "Hosted Intra-Society Hackathons",
@@ -26,6 +26,8 @@ const WhatWeDo = () => {
   const componentRef = useRef(null);
 
   useEffect(() => {
+    if (isBad) return;
+
     gsap.registerPlugin(ScrollTrigger);
     const element = componentRef.current;
     if (!element) return;
@@ -52,7 +54,28 @@ const WhatWeDo = () => {
       ease: "power2.out",
     }, "-=0.3");
 
-  }, []);
+  }, [isBad]);
+  
+  if (isBad) {
+    return (
+      <div>
+        <h2 style={{ fontSize: "33px", textAlign: "center", color: 'red' }}>
+          ./what_we_do.sh
+        </h2>
+        <p style={{ textAlign: "right", fontStyle: "italic", color: "gray", fontSize: '10px' }}>From hackathon sites to department portals, we build it all.</p>
+        <div style={{ display: 'flex', marginTop: '2rem', gap: '1rem' }}>
+          <div style={{ flex: 1, border: '3px solid green', padding: '1rem' }}>
+            <h3 style={{ fontSize: '1.8rem', color: 'yellow' }}>achievements.log</h3>
+            <ul>{achievements.map((item, i) => <li key={i} style={{ marginLeft: `${i * 10}px` }}>{item}</li>)}</ul>
+          </div>
+          <div style={{ flex: 1, border: '1px dotted magenta', padding: '2rem' }}>
+            <h3 style={{ fontSize: '1.2rem', color: 'cyan' }}>cross_department.sh</h3>
+            <div>{departments.map((item, i) => <p key={i} style={{ paddingLeft: `${i * 5}px` }}>{item}</p>)}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section id="what-we-do" className="container mx-auto px-4" ref={componentRef}>

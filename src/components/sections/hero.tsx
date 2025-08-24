@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 
-const Hero = () => {
+const Hero = ({ isBad = false }: { isBad?: boolean }) => {
   const componentRef = useRef(null);
 
   useEffect(() => {
+    if (isBad) return;
     const ctx = gsap.context(() => {
       gsap.from(".terminal-line", {
         delay: 0.5,
@@ -28,13 +29,28 @@ const Hero = () => {
       });
     }, componentRef);
     return () => ctx.revert();
-  }, []);
+  }, [isBad]);
 
   const terminalLines = [
     "$ echo \"Hello, World!\"",
     "› Spinning up ideas → shipping products",
     "› sudo join geekroom-webdev --yes",
   ];
+
+  if (isBad) {
+    return (
+      <div>
+        <h1 style={{ fontSize: "3rem", color: "lime" }}>Web Development Society</h1>
+        <h2 style={{ fontSize: "1.5rem", color: "fuchsia" }}>Building the Web, Building the Future</h2>
+        <p style={{ marginTop: "20px", color: "silver", fontSize: "12px" }}>We are the architects of the digital frontier, a community of developers, designers, and innovators at GeekRoom dedicated to building the web's future, one line of code at a time.</p>
+        <div style={{ background: "black", border: "1px solid #333", padding: "1rem", marginTop: "2rem", fontFamily: "monospace" }}>
+          {terminalLines.map((line, i) => <p key={i}>{line}</p>)}
+          <span>▋</span>
+        </div>
+        <a href="#join" style={{ display: "inline-block", background: "blue", color: "white", padding: "10px 25px", marginTop: "25px" }}>Join the Crew</a>
+      </div>
+    );
+  }
 
   return (
     <motion.section

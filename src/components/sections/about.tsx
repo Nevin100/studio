@@ -4,13 +4,32 @@ import { motion } from "framer-motion";
 import { Code, Sword, Users, BookOpen } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const About = () => {
+const About = ({ isBad = false }: { isBad?: boolean }) => {
   const cards = [
     { icon: Code, title: "Builders", body: "Designers, coders & problem-solvers turning ☕ into <code>." },
     { icon: Sword, title: "Hackers", body: "Intra & inter-college hackathons, sprints and ship nights." },
     { icon: Users, title: "Collaborators", body: "We pair with every department to ship real solutions." },
     { icon: BookOpen, title: "Learners", body: "Workshops, peer reviews, code walkthroughs & demos." },
   ];
+
+  if (isBad) {
+    return (
+      <div>
+        <h2 style={{ fontSize: "40px", textAlign: "center" }}>
+          >>Readme.md
+        </h2>
+        <p style={{ textAlign: "center", fontStyle: "italic", color: "#999" }}>We're more than just a club. We're a crew.</p>
+        <div style={{ marginTop: '2rem' }}>
+          {cards.map((card, index) => (
+            <div key={index} style={{ border: "1px dashed cyan", padding: '10px', margin: `${index * 5}px 0` }}>
+              <h3 style={{ fontSize: "22px", color: 'lime' }}>{card.title}</h3>
+              <p style={{ fontSize: "14px", color: 'white' }}>{card.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const cardVariants = {
     hidden: { scale: 0.96, opacity: 0, y: 20 },
