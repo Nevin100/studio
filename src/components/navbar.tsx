@@ -16,10 +16,10 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "What We Do", href: "#what-we-do" },
-    { label: "Roadmap", href: "#roadmap" },
-    { label: "Join", href: "#join" },
+    { label: "Readme.md", href: "#about" },
+    { label: "what_we_do.sh", href: "#what-we-do" },
+    { label: "CONTRIBUTING.md", href: "#roadmap" },
+    { label: "join.sh", href: "#join" },
   ];
 
   useEffect(() => {

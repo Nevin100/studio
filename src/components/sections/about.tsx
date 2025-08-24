@@ -30,7 +30,7 @@ const About = () => {
     <section id="about" className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
-          whoami
+          >>Readme.md
         </h2>
         <p className="text-muted-foreground">We're more than just a club. We're a crew.</p>
       </div>
