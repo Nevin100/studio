@@ -42,7 +42,15 @@ const Hero = ({ isBad = false }: { isBad?: boolean }) => {
       <div>
         <h1 style={{ fontSize: "3rem", color: "lime" }}>Web Development Society</h1>
         <h2 style={{ fontSize: "1.5rem", color: "fuchsia" }}>Building the Web, Building the Future</h2>
-        <p classname="justify-self-center justify-center" style={{ marginTop: "20px", color: "silver", fontSize: "12px" }}>We are the architects of the digital frontier, a community of developers, designers, and innovators at GeekRoom dedicated to building the web's future, one line of code at a time.</p>
+        <motion.p 
+  className="text-lg md:text-xl text-foreground mb-8 max-w-3xl mx-auto"
+  initial={{ y: 30, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ type: "spring", stiffness: 120, delay: 0.3 }}
+>
+  We are the architects of the digital frontier, a community of developers, designers, and innovators at GeekRoom dedicated to building the web's future, one line of code at a time.
+</motion.p>
+
         <div style={{ background: "black", border: "1px solid #333", padding: "1rem", marginTop: "2rem", fontFamily: "monospace" }}>
           {terminalLines.map((line, i) => <p key={i}>{line}</p>)}
           <span>▋</span>
