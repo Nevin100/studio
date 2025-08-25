@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 flex justify-between items-center h-[72px]">
           <a href="#home" className="flex items-center gap-2">
             <Logo />
-            <span className="font-bold text-lg hidden sm:block">GeekRoom WebDev</span>
+            <span className="font-bold text-lg hidden sm:block">GR WebDev</span>
           </a>
 
           <div className="hidden md:flex items-center gap-6">
