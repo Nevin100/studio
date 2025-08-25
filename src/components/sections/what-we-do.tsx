@@ -13,11 +13,11 @@ const WhatWeDo = ({ isBad = false }: { isBad?: boolean }) => {
   ];
 
   const departments = [
-    "Engineering → project portals & dashboards",
-    "Business → e-commerce & analytics",
-    "Design → portfolio & showcases",
-    "Science → research sites & data viz",
-    "Fests → event sites & ticketing",
+    "Development → projects,Hackathon Websites & Internal Hackathons",
+    "AI/ML → Kaggle Competitions, Training Models",
+    "Design → Posters, Graphics, Videos, UI/UX",
+    "DSA → Competitive Programming, Monthly LeetCode Sessions",
+    "Emerging Tech → Learn New Technologies like Blockchain, Cloud, etc.",
   ];
 
   // Parent list (controls stagger)
