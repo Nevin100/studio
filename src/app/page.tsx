@@ -66,7 +66,7 @@ const BadDesign = ({ onGoodDesign }: { onGoodDesign: () => void }) => (
     </main>
 
     <footer style={{ borderTop: "5px solid blue", marginTop: "50px", paddingTop: "20px", textAlign: "center", fontSize: "10px" }}>
-      <p>© 2024 GeekRoom WebDev. All Rights Reserved. Probably.</p>
+      <p>© 2025 GeekRoom WebDev. All Rights Reserved. Probably.</p>
     </footer>
     
     <Button
@@ -106,9 +106,9 @@ const GoodDesign = () => (
 export default function Home() {
   const [isStyled, setIsStyled] = useState(false);
 
-  if (!isStyled) {
-    return <BadDesign onGoodDesign={() => setIsStyled(true)} />;
-  }
+  // if (!isStyled) {
+  //   return <BadDesign onGoodDesign={() => setIsStyled(true)} />;
+  // }
 
   return <GoodDesign />;
 }

@@ -3,19 +3,21 @@
 import { motion } from "framer-motion";
 import { XCircle, CheckCircle } from "lucide-react";
 import { Card } from "../ui/card";
+import Image from "next/image";
 
 const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
   const beforeItems = [
-    "Copy–paste assignments",
-    "Comic Sans PPTs 😬",
-    "Zero portfolio, no Git",
-    "Events = just attendees",
+    "Assignments copied just to meet deadlines 📑",
+    "PPTs with Comic Sans and clipart 😬",
+    "No GitHub, no portfolio, no proof of skills",
+    "Joining events only as spectators 👀",
   ];
+
   const afterItems = [
-    "Live projects & deployments 🚀",
-    "Personal site + GitHub heatmap",
-    "Team workflows with PRs",
-    "Events = organizers & mentors",
+    "Building real-world projects & deploying them 🚀",
+    "Personal websites + GitHub heatmaps full of green",
+    "Collaborating with teams through PRs & workflows 🤝",
+    "Running events as organizers, mentors & leaders",
   ];
 
   // Variants for parent list (controls staggering)
@@ -73,7 +75,12 @@ const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           before_after.js
         </h2>
-        <p className="font-code text-foreground">return &#123; life: '200 OK' &#125;</p>
+        <p className="font-code text-foreground mb-6">
+          return &#123; life: '200 OK' &#125;
+        </p>
+
+        {/* Image directly below return line */}
+        
       </div>
 
       <Card className="bg-card/50 overflow-hidden">
@@ -135,6 +142,15 @@ const BeforeAfter = ({ isBad = false }: { isBad?: boolean }) => {
           </div>
         </div>
       </Card>
+      <div className="flex justify-center  mb-10 mt-10">
+          <img
+            src="/meme2.jpg"
+            alt="Before and After Transformation"
+            width={800}
+            height={400}
+            className="rounded-2xl shadow-lg object-cover h-[460px]"
+          />
+        </div>
     </section>
   );
 };

@@ -1,82 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Sword, Users, BookOpen } from 'lucide-react';
+import { Code, Sword, Users, BookOpen } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 
-const About = ({ isBad = false }: { isBad?: boolean }) => {
+const About = () => {
   const cards = [
-    { icon: Code, title: "Builders", body: "Designers, coders & problem-solvers turning ☕ into <code>." },
-    { icon: Sword, title: "Hackers", body: "Intra & inter-college hackathons, sprints and ship nights." },
-    { icon: Users, title: "Collaborators", body: "We pair with every department to ship real solutions." },
-    { icon: BookOpen, title: "Learners", body: "Workshops, peer reviews, code walkthroughs & demos." },
+    { 
+      icon: Code, 
+      title: "Builders", 
+      body: "We’re the ones who dream in design files and wake up writing code. From late-night bug hunts to turning ☕ into <code>, we craft ideas into real-world solutions.",
+      image: "/Stages-Of-Problem-Solving.png"
+    },
+    { 
+      icon: Sword, 
+      title: "Hackers", 
+      body: "Adrenaline-fueled hackathons, all-nighters, and rapid-fire sprints—this is where crazy ideas meet execution. We break things fast, learn faster, and ship the unexpected.",
+      image: "/hackathon.webp"
+    },
+    { 
+      icon: Users, 
+      title: "Collaborators", 
+      body: "No silos, no ego. We team up with every department—design, AI/ML, Emerging Tech, you name it—to build things that actually solve problems, not just look good on slides.",
+      image: "/colab.png"
+    },
+    { 
+      icon: BookOpen, 
+      title: "Learners", 
+      body: "Curiosity is our fuel. Workshops, peer-to-peer reviews, deep dives, and live code walkthroughs keep us growing together—because the best projects are born from shared knowledge.",
+      image: "/learning.png"
+    },
   ];
 
-  if (isBad) {
-    return (
-      <div>
-        <h2 style={{ fontSize: "40px", textAlign: "center" }}>
-          >>Readme.md
-        </h2>
-        <p style={{ textAlign: "center", fontStyle: "italic", color: "#999" }}>We're more than just a club. We're a crew.</p>
-        <div style={{ marginTop: '2rem' }}>
-          {cards.map((card, index) => (
-            <div key={index} style={{ border: "1px dashed cyan", padding: '10px', margin: `${index * 5}px 0` }}>
-              <h3 style={{ fontSize: "22px", color: 'lime' }}>{card.title}</h3>
-              <p style={{ fontSize: "14px", color: 'white' }}>{card.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
   const cardVariants = {
-    hidden: { scale: 0.96, opacity: 0, y: 20 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 160,
-        damping: 14,
-      },
-    },
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
   return (
-    <section id="about" className="container mx-auto px-4">
-      <div className="text-center mb-12">
+    <section id="about" className="container mx-auto px-4 py-16">
+      <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold font-code text-primary mb-2">
           >>Readme.md
         </h2>
-        <p className="text-foreground">We're more than just a club. We're a crew.</p>
+        <p className="text-lg text-muted-foreground">
+          We're more than just a club. We're a crew. 🚀
+        </p>
       </div>
 
-      <motion.div 
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ staggerChildren: 0.1 }}
-      >
+      <div className="space-y-20">
         {cards.map((card, index) => (
-          <motion.div key={index} variants={cardVariants}>
-            <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <card.icon className="w-8 h-8 text-primary" />
-                  <CardTitle className="text-xl font-bold font-code">{card.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-foreground">{card.body}</p>
-              </CardContent>
-            </Card>
+          <motion.div
+            key={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className={`flex flex-col md:flex-row items-center gap-12 ${
+              index % 2 === 1 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Image */}
+            <div className="w-full md:w-1/2">
+              <Image
+                src={card.image}
+                alt={card.title}
+                width={500}
+                height={400}
+                className="rounded-2xl shadow-lg object-cover"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full md:w-1/2">
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/10">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <card.icon className="w-8 h-8 text-primary" />
+                    <CardTitle className="text-2xl font-bold font-code">{card.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground leading-relaxed">{card.body}</p>
+                </CardContent>
+              </Card>
+            </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

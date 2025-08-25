@@ -43,16 +43,6 @@ const Join = ({ isBad = false }: { isBad?: boolean }) => {
               <code>{codeText}</code>
             </pre>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button size="lg" asChild>
-                  <a href="#">Apply Now</a>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Button size="lg" variant="ghost" asChild>
-                  <a href="#what-we-do">What We Do</a>
-                </Button>
-              </motion.div>
             </div>
           </CardContent>
         </Card>

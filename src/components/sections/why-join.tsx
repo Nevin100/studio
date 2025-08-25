@@ -5,8 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Terminal } from "lucide-react";
 
 const WhyJoin = ({ isBad = false }: { isBad?: boolean }) => {
-  const markdown =
-    "• Build **real apps** used on campus\n• Be the **tech hero** every dept calls\n• Learn **future-proof** tools\n• Late-night builds + memes\n• **Showcase** portfolio & get noticed";
+  const markdown = 
+  "• Ship **real-world apps** that people on campus actually use\n" +
+  "• Become the **go-to problem solver** every department relies on\n" +
+  "• Get hands-on with **AI, web, and emerging tech** before everyone else\n" +
+  "• Late-night builds, caffeine, and way too many inside jokes 😅\n" +
+  "• Craft a **portfolio that speaks louder** than any résumé";
 
   const parseMarkdown = (text: string) => {
     return text.split("\n").map((line, i) => (
@@ -75,7 +79,7 @@ const WhyJoin = ({ isBad = false }: { isBad?: boolean }) => {
           <CardHeader>
             <CardTitle className="font-code text-2xl text-accent flex items-center gap-2">
               <Terminal />
-              why_join_us.md
+              why_this_crew.md
             </CardTitle>
           </CardHeader>
           <CardContent>
