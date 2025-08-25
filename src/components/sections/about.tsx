@@ -23,13 +23,13 @@ const About = () => {
       icon: Users, 
       title: "Collaborators", 
       body: "No silos, no ego. We team up with every department—design, AI/ML, Emerging Tech, you name it—to build things that actually solve problems, not just look good on slides.",
-      image: "/colab.png"
+      image: "/Colab.png"
     },
     { 
       icon: BookOpen, 
       title: "Learners", 
       body: "Curiosity is our fuel. Workshops, peer-to-peer reviews, deep dives, and live code walkthroughs keep us growing together—because the best projects are born from shared knowledge.",
-      image: "/learning.png"
+      image: "/Learning.png"
     },
   ];
 
